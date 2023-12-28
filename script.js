@@ -1,4 +1,3 @@
-<script>
         function showSchedule() {
             var weekdaySelect = document.getElementById('weekday');
             var selectedItem = weekdaySelect.selectedIndex;
@@ -298,4 +297,3 @@
         function clearFields() {
             document.getElementById('response').innerHTML = ''; 
         }
-    </script>
