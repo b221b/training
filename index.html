@@ -13,30 +13,21 @@
             color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
-            /* Удалить стандартный отступ */
             display: flex;
-            /* Включение Flexbox */
             flex-direction: column;
-            /* Элементы следуют вертикально */
             align-items: center;
-            /* Выравнивание элементов по центру по горизонтали */
             justify-content: center;
-            /* Выравнивание элементов по центру по вертикали */
-            height: 100vh;
-            /* Высота body равна высоте вьюпорта */
+            min-height: 100vh;
+            /* Используйте min-height вместо height */
+            overflow: auto;
         }
 
         .center {
             display: flex;
-            /* Включение Flexbox */
             flex-direction: column;
-            /* Элементы следуют вертикально */
             align-items: center;
-            /* Выравнивание элементов по центру по горизонтали */
             justify-content: center;
-            /* Выравнивание элементов по центру по вертикали */
             width: 100%;
-            /* Ширина на весь экран */
         }
 
         h1,
@@ -84,11 +75,8 @@
             padding: 30px;
             background-color: #ffffff;
             width: 100%;
-            /* Бокс теперь использует 100% ширины контейнера */
-            max-width: 400px;
-            /* Добавим максимальную ширину, чтобы на больших экранах выглядело красиво */
+            max-width: 800px;
             margin: 20px;
-            /* Добавим немного отступа снаружи */
             word-wrap: break-word;
         }
 
@@ -239,6 +227,13 @@
                 padding: 15px;
             }
         }
+
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
     </style>
 </head>
 
@@ -269,6 +264,7 @@
         </footer> -->
 
     </div>
+
     <div class="center">
         <div class="box">
             <!-- <img src="123.svg" width="100"> -->
@@ -280,50 +276,104 @@
                 <option value="3">4. Спина грудь плечи</option>
                 <option value="4">5. Грудь ноги трицепс бицепс</option>
             </select>
+
             <button onclick="showSchedule()">Показать расписание</button>
             <button id="clearButton" onclick="clearFields()">Очистить</button>
-            <h2>Тренировка:</h2>
-            <div id="response"></div>
+            <div id="response" style="color: #000; margin-top: 10px;"></div>
+
         </div>
     </div>
 
     <script>
         function showSchedule() {
             var weekdaySelect = document.getElementById('weekday');
-            var selectedItem = weekdaySelect.selectedIndex; // Индекс выбранного элемента
+            var selectedItem = weekdaySelect.selectedIndex;
             var responseDiv = document.getElementById('response');
 
-            // В зависимости от выбранного индекса отображается различный текст
             var responseText = '';
             switch (selectedItem) {
                 case 0:
-                    responseText = 'Спина грудь';
+                    responseText = `<pre>тренировка спины + грудь:
+        1)спина:
+            1)разминка
+                5 разминочных подтягиваний параллельным хватом
+                50 подтягиваний разными хватами
+
+            2) тяга блока к груди (подбородку) :
+                4 подхода:
+                    1) разминочный вес на 10 повторений (32 кг)
+                    2) 80% от своего веса на 8 повторений (53кг)
+                    3) 110% от своего веса на 1-2 повторений (71 кг)
+                    4) половина от веса в 3 на 30 повторений (35кг)
+
+            3) горизонтальная тяга:
+                подходы:
+                    1) разминочный вес на 10 повторений
+                    2) +10кг на 10 повторений
+
+            4) экстензия на поясницу
+                подходы:
+                    4х10-15
+
+            5)вертикально-горизонтальная тяга:
+                подходы:
+                    1)45кг 15 повт.
+                    2)54кг 12 повт.
+                    3)68кг 8-12 повт
+                    4)68кг 8-12 повт
+
+         2) грудь:
+            1) жим лежа
+                1) пустой гриф 15-20 повт (разминочный)
+                2) 30 кг 8-12 повт.
+                3) 45 6-8 повт.
+                4) 30 кг 8-12 повт.
+
+            2) жим в тренажере chest press
+                1) легкий вес 10-15 повт.
+                2) 30 кг 8-10 повт.
+                3) 40 кг 8-12 повт.
+                4) 50 кг 8 повт.
+                5) 50кг макс --> 40кг макс --> 30кг макс --> 20кг макс --> 10 кг макс
+
+            3) разводки в блоках
+                1) легкий 15-20 повт (разминочный)
+                2) 18 кг 8-12 повт.
+                3) 23 кг 4 повт.
+                4) 14 кг 15 повт.
+
+            4)пекторал машина:
+                подходы:
+                    1)15кг 15 повт
+                    2)30кг 8 повт
+                    3)35кг 5 повт
+</pre>`;
                     break;
                 case 1:
-                    responseText = 'Бицепс трицепс';
+                    responseText = '<pre>Бицепс трицепс</pre>';
                     break;
                 case 2:
-                    responseText = 'Ноги плечи';
+                    responseText = '<pre>Ноги плечи</pre>';
                     break;
                 case 3:
-                    responseText = 'Спина грудь плечи';
+                    responseText = '<pre>Спина грудь плечи</pre>';
                     break;
                 case 4:
-                    responseText = 'Грудь ноги трицепс бицепс';
+                    responseText = '<pre>Грудь ноги трицепс бицепс</pre>';
                     break;
                 default:
-                    responseText = 'Пожалуйста, выберите день недели';
+                    responseText = '<pre>Пожалуйста, выберите день недели</pre>';
                     break;
             }
-            responseDiv.textContent = responseText; // Отображение соответствующего сообщения
-            responseDiv.style.color = '#000'; // Установка цвета текста в черный
+            responseDiv.innerHTML = responseText; // Используйте innerHTML, а не textContent
+            responseDiv.style.color = '#000'; // Это действие теперь не нужно, если вы используете <pre>
         }
-
 
         function clearFields() {
-            document.getElementById('response').textContent = ''; // Очистка поля с сообщением
+            document.getElementById('response').innerHTML = ''; // Используйте innerHTML для очистки
         }
     </script>
+
 </body>
 
 </html>
