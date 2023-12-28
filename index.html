@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Training</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            /* Удалить стандартный отступ */
+            display: flex;
+            /* Включение Flexbox */
+            flex-direction: column;
+            /* Элементы следуют вертикально */
+            align-items: center;
+            /* Выравнивание элементов по центру по горизонтали */
+            justify-content: center;
+            /* Выравнивание элементов по центру по вертикали */
+            height: 100vh;
+            /* Высота body равна высоте вьюпорта */
+        }
+
+        .center {
+            display: flex;
+            /* Включение Flexbox */
+            flex-direction: column;
+            /* Элементы следуют вертикально */
+            align-items: center;
+            /* Выравнивание элементов по центру по горизонтали */
+            justify-content: center;
+            /* Выравнивание элементов по центру по вертикали */
+            width: 100%;
+            /* Ширина на весь экран */
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #8800ff;
+        }
+
+        a {
+            color: #8800ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #bb00ff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            /* <= Новое свойство для ширины */
+            /* Остальные свойства... */
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .box {
+
+            border: 1px solid #512da8;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: #ffffff;
+            width: 100%;
+            /* Бокс теперь использует 100% ширины контейнера */
+            max-width: 400px;
+            /* Добавим максимальную ширину, чтобы на больших экранах выглядело красиво */
+            margin: 20px;
+            /* Добавим немного отступа снаружи */
+            word-wrap: break-word;
+        }
+
+        select,
+        button,
+        div {
+            margin: 10px;
+        }
+
+        select,
+        button {
+            background-color: #7e57c2;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        select:hover,
+        button:hover {
+            background-color: #512da8;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        #clearButton {
+            margin-left: 10px;
+        }
+
+        /*задний фон*/
+
+        /*кнопка по страницам*/
+        .top-right-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #7e57c2;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .top-right-button:hover {
+            background-color: #512da8;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        /*кнопка по страницам*/
+
+        /*левая кнопка*/
+        .top-left-button {
+            position: fixed;
+            top: 20px;
+            left: 0px;
+            background-color: #777777;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .top-left-button:hover {
+            background-color: #313131;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .box {
+                width: 90%;
+                /* Больше места на экране меньшего размера */
+                padding: 15px;
+                margin-top: 10px;
+                margin: 10px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-content {
+                font-size: 14px;
+            }
+
+            select,
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            /* Меньшее пространство вокруг кнопок для экономии места */
+            .top-right-button,
+            .top-left-button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+                /* Уменьшение размера заголовка для помещения содержимого на экране меньшего размера */
+            }
+
+            .center {
+                padding: 0;
+            }
+
+            /* Уменьшить отступы и размер шрифта еще больше для мобильных устройств */
+            .box {
+                border-radius: 10px;
+                padding: 10px;
+                margin: 5px;
+            }
+
+            select,
+            button {
+                font-size: 12px;
+                /* Меньший текст для селекта и кнопок */
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="section">
+            <h1 style="display: flex; justify-content: center;">Йоу</h1>
+
+        </header>
+
+        <!-- <nav class="section">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="section">
+            <h2 class="section-title">Добро пожаловать на наш сайт!</h2>
+            <p class="section-content">Здесь вы найдете много интересной информации о нашей компании. Пожалуйста,
+                выберите раздел, который вас интересует.</p>
+        </main>
+
+        <footer class="section">
+            <p>Все права защищены. &copy; 2023</p>
+        </footer> -->
+
+    </div>
+    <div class="center">
+        <div class="box">
+            <!-- <img src="123.svg" width="100"> -->
+            <h1>Выберите день недели</h1>
+            <select id="weekday">
+                <option value="0">1. Спина грудь</option>
+                <option value="1">2. Бицепс трицепс</option>
+                <option value="2">3. Ноги плечи</option>
+                <option value="3">4. Спина грудь плечи</option>
+                <option value="4">5. Грудь ноги трицепс бицепс</option>
+            </select>
+            <button onclick="showSchedule()">Показать расписание</button>
+            <button id="clearButton" onclick="clearFields()">Очистить</button>
+            <h2>Тренировка:</h2>
+            <div id="response"></div>
+        </div>
+    </div>
+
+    <script>
+        function showSchedule() {
+            var weekdaySelect = document.getElementById('weekday');
+            var selectedItem = weekdaySelect.selectedIndex; // Индекс выбранного элемента
+            var responseDiv = document.getElementById('response');
+
+            // В зависимости от выбранного индекса отображается различный текст
+            var responseText = '';
+            switch (selectedItem) {
+                case 0:
+                    responseText = 'Спина грудь';
+                    break;
+                case 1:
+                    responseText = 'Бицепс трицепс';
+                    break;
+                case 2:
+                    responseText = 'Ноги плечи';
+                    break;
+                case 3:
+                    responseText = 'Спина грудь плечи';
+                    break;
+                case 4:
+                    responseText = 'Грудь ноги трицепс бицепс';
+                    break;
+                default:
+                    responseText = 'Пожалуйста, выберите день недели';
+                    break;
+            }
+            responseDiv.textContent = responseText; // Отображение соответствующего сообщения
+            responseDiv.style.color = '#000'; // Установка цвета текста в черный
+        }
+
+
+        function clearFields() {
+            document.getElementById('response').textContent = ''; // Очистка поля с сообщением
+        }
+    </script>
+</body>
+
+</html>
