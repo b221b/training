@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Training</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Используйте min-height вместо height */
+            overflow: auto;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #8800ff;
+        }
+
+        a {
+            color: #8800ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #bb00ff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            /* <= Новое свойство для ширины */
+            /* Остальные свойства... */
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .box {
+
+            border: 1px solid #512da8;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+            word-wrap: break-word;
+        }
+
+        select,
+        button,
+        div {
+            margin: 10px;
+        }
+
+        select,
+        button {
+            background-color: #7e57c2;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        select:hover,
+        button:hover {
+            background-color: #512da8;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        #clearButton {
+            margin-left: 10px;
+        }
+
+        /*задний фон*/
+
+        /*кнопка по страницам*/
+        .top-right-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #7e57c2;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .top-right-button:hover {
+            background-color: #512da8;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        /*кнопка по страницам*/
+
+        /*левая кнопка*/
+        .top-left-button {
+            position: fixed;
+            top: 20px;
+            left: 0px;
+            background-color: #777777;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .top-left-button:hover {
+            background-color: #313131;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .box {
+                width: 90%;
+                /* Больше места на экране меньшего размера */
+                padding: 15px;
+                margin-top: 10px;
+                margin: 10px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-content {
+                font-size: 14px;
+            }
+
+            select,
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            /* Меньшее пространство вокруг кнопок для экономии места */
+            .top-right-button,
+            .top-left-button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+                /* Уменьшение размера заголовка для помещения содержимого на экране меньшего размера */
+            }
+
+            .center {
+                padding: 0;
+            }
+
+            /* Уменьшить отступы и размер шрифта еще больше для мобильных устройств */
+            .box {
+                border-radius: 10px;
+                padding: 10px;
+                margin: 5px;
+            }
+
+            select,
+            button {
+                font-size: 12px;
+                /* Меньший текст для селекта и кнопок */
+                padding: 15px;
+            }
+        }
+
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            /* font-size: 18px; */
+            white-space: pre-wrap;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            /* Уменьшаем padding сверху и снизу, чтобы сделать панель более узкой */
+            padding: 6px 0;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            align-items: center;
+            width: 60%;
+            /* Добавляем ширину 100% чтобы использовать все доступное пространство */
+            justify-content: space-around;
+            /* Используем это свойство для равномерного распределения элементов */
+        }
+
+        .nav-item {
+            display: flex;
+
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-brand {
+            color: white;
+            text-decoration: none;
+            /* Увеличиваем размер LOGO и делаем его жирным */
+            font-size: 1.5em;
+            font-weight: bold;
+            /* Можно добавить отдельный фон, если требуется */
+            background-color: #555;
+            /* Пример цвета фона */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            /* Добавим border-radius, чтобы LOGO выделялось еще больше */
+            border-radius: 5px;
+        }
+
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Уменьшаем padding справа и слева, чтобы соответствовать новому размеру навигации */
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Верхняя панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Training</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="glavnaya.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Тренировки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="author.html">Авторы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Сигмы</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Верхняя панель -->
+
+    <div class="container">
+        <header class="section">
+            <h1 style="display: flex; justify-content: center;">Главная</h1>
+        </header>
+
+        <div style="padding-top: 56px;">
+
+            <main class="section">
+                <h2 class="section-title">Добро пожаловать на наш сайт!</h2>
+                <p class="section-content">Здесь вы найдете много интересной информации о нашей компании. Пожалуйста,
+                    выберите раздел, который вас интересует.</p>
+            </main>
+
+            <footer class="section">
+                <p>Все права защищены. Titarenko incorporation &copy; 2024</p>
+            </footer>
+
+        </div>
+
+        <!-- <img src="shit/3.gif" width="300px"> -->
+
+        <div class="center">
+            <div class="box">
+                <!-- <img src="123.svg" width="100"> -->
+                <b style="color: black">Главная епт</b>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

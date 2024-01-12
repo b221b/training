@@ -1,0 +1,227 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Используйте min-height вместо height */
+    overflow: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    color: #8800ff;
+}
+
+a {
+    color: #8800ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bb00ff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    /* <= Новое свойство для ширины */
+    /* Остальные свойства... */
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.box {
+
+    border: 1px solid #512da8;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    word-wrap: break-word;
+}
+
+select,
+button,
+div {
+    margin: 10px;
+}
+
+select,
+button {
+    background-color: #7e57c2;
+    /* Medium-Fair purple select and button background */
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+select:hover,
+button:hover {
+    background-color: #512da8;
+    /* Darker purple select and button on hover */
+    color: white;
+}
+
+#clearButton {
+    margin-left: 10px;
+}
+
+/*задний фон*/
+
+/*кнопка по страницам*/
+.top-right-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #7e57c2;
+    /* Medium-Fair purple select and button background */
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.top-right-button:hover {
+    background-color: #512da8;
+    /* Darker purple select and button on hover */
+    color: white;
+}
+
+/*кнопка по страницам*/
+
+/*левая кнопка*/
+.top-left-button {
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    background-color: #777777;
+    /* Medium-Fair purple select and button background */
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.top-left-button:hover {
+    background-color: #313131;
+    /* Darker purple select and button on hover */
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .box {
+        width: 90%;
+        /* Больше места на экране меньшего размера */
+        padding: 15px;
+        margin-top: 10px;
+        margin: 10px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-content {
+        font-size: 14px;
+    }
+
+    select,
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Меньшее пространство вокруг кнопок для экономии места */
+    .top-right-button,
+    .top-left-button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 24px;
+        /* Уменьшение размера заголовка для помещения содержимого на экране меньшего размера */
+    }
+
+    .center {
+        padding: 0;
+    }
+
+    /* Уменьшить отступы и размер шрифта еще больше для мобильных устройств */
+    .box {
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    select,
+    button {
+        font-size: 12px;
+        /* Меньший текст для селекта и кнопок */
+        padding: 15px;
+    }
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    /* font-size: 18px; */
+    white-space: pre-wrap;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
