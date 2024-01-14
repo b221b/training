@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSd1n34mIKl6qvL0iBxGIw5g5KRvMz3M7RF4jyJHrBg6KXN6"
+        crossorigin="anonymous"></script>
 
     <style>
         body {
@@ -21,7 +27,7 @@
             justify-content: center;
             min-height: 100vh;
             overflow: auto;
-            padding-top: 100px;
+            /* padding-top: 100px; */
         }
 
         .center {
@@ -265,22 +271,43 @@
 <body>
 
     <!-- Верхняя панель -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Training</a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="glavnaya.html">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Тренировки</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="author.html">Авторы</a>
-                </li>
-            </ul>
+            <a class="navbar-brand" href="glavnaya.html">Training</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="glavnaya.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Тренировки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="author.html">Авторы</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Получим элементы для обработки
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            var navbarMenu = document.querySelector('.navbar-collapse');
+
+            navbarToggler.addEventListener('click', function () {
+                // Почему-то у Bootstrap классы 'collapse' и 'collapsing' не работают на вашем сайте?
+                navbarMenu.classList.toggle('show');
+            });
+        });
+    </script>
+
     <!-- Верхняя панель -->
 
     <div class="container">
