@@ -127,6 +127,20 @@
         /* -------------------------------------------------------------------------- */
         /* -------------------------------------------------------------------------- */
 
+        @media (min-width: 992px) {
+
+            /* Adjust this value as per requirement */
+            .nav-item {
+                flex: 0 0 calc(25% - 10px);
+                /* Allow each item to take up to 25% of the container minus margin/padding */
+                max-width: calc(25% - 10px);
+                /* Also set a max-width with the same value */
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                /* Add margin for visual spacing when they wrap */
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -209,17 +223,19 @@
 
 
         .navbar {
-        background-color: #f8f9fa; /* Светлый фон вместо градиента */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1030;
-        padding: 10px 0;
-    }
+            background-color: #f8f9fa;
+            /* Светлый фон вместо градиента */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            padding: 10px 0;
+        }
 
         .navbar-nav {
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
             list-style: none;
             padding-left: 0;
@@ -278,7 +294,7 @@
         }
 
         .navbar-toggler {
-            border-color: rgba(0, 0, 0, .1); 
+            border-color: rgba(0, 0, 0, .1);
         }
 
         .navbar-toggler-icon {
