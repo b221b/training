@@ -127,20 +127,6 @@
         /* -------------------------------------------------------------------------- */
         /* -------------------------------------------------------------------------- */
 
-        @media (min-width: 992px) {
-
-            /* Adjust this value as per requirement */
-            .nav-item {
-                flex: 0 0 calc(25% - 10px);
-                /* Allow each item to take up to 25% of the container minus margin/padding */
-                max-width: calc(25% - 10px);
-                /* Also set a max-width with the same value */
-                box-sizing: border-box;
-                margin-bottom: 10px;
-                /* Add margin for visual spacing when they wrap */
-            }
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -308,6 +294,38 @@
             /* Уменьшаем padding справа и слева, чтобы соответствовать новому размеру навигации */
             padding: 0 10px;
         }
+
+        /* Стиль для навигационных пунктов в вертикальном режиме */
+.nav-item-vertical {
+    width: 100%;
+}
+
+/* Стиль для навигационной панели в вертикальном режиме при развертывании */
+.navbar-collapse-vertical {
+    flex-basis: auto;
+}
+
+/* Медиа-запрос, который будет применять стили для экранов меньше определенной ширины */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* Пункты меню будут идти вертикально */
+    }
+    .nav-item {
+        width: 100%; /* Каждый пункт меню займет все доступное горизонтальное пространство */
+    }
+}
+
+/* Стили для отображения вертикального меню после переключения navbar-toggler */
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1rem; /* Слегка увеличиваем отступ слева для ссылок */
+    padding-right: 1rem; /* Слегка увеличиваем отступ справа для ссылок */
+}
+
+/* Добавить отступ сверху для navbar-collapse чтобы она не перекрывала элементы сверху */
+.navbar-collapse{
+    padding-top: 1rem;
+}
+
     </style>
 </head>
 
