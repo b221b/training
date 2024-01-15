@@ -208,13 +208,14 @@
 
 
         .navbar {
-            background-color: #343a40;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1030;
-            padding: 8px 0;
-        }
+        background-color: #f8f9fa; /* Светлый фон вместо градиента */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+        padding: 10px 0;
+    }
 
         .navbar-nav {
             display: flex;
@@ -224,44 +225,63 @@
             margin-bottom: 0;
             align-items: center;
             width: 100%;
-            /* Изменено с 60% на 100% */
             justify-content: space-between;
-            /* Распределяем элементы равномерно */
         }
 
         .nav-item {
             flex-grow: 1;
-            /* Это заставит каждый nav-item расти и занимать равное пространство */
             text-align: center;
-            /* Центрирование ссылки внутри элемента nav-item */
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover {
+            transform: scale(1.05);
         }
 
         .nav-link {
-            color: white;
+            color: #333;
             text-decoration: none;
             padding: 8px 20px;
             display: block;
-            /* Для центрирования текста внутри nav-link */
+            transition: color 0.2s ease-out;
         }
 
         .nav-link:hover {
             text-decoration: underline;
         }
 
-        .navbar-brand {
-            color: white;
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #0056b3;
             text-decoration: none;
-            /* Увеличиваем размер LOGO и делаем его жирным */
+        }
+
+        .navbar-brand {
+            color: #0056b3;
+            text-decoration: none;
             font-size: 1.5em;
             font-weight: bold;
-            /* Можно добавить отдельный фон, если требуется */
             background-color: #555;
-            /* Пример цвета фона */
             padding: 5px 10px;
             display: flex;
             align-items: center;
-            /* Добавим border-radius, чтобы LOGO выделялось еще больше */
             border-radius: 5px;
+            background-image: linear-gradient(to right, #f857a6, #ff5858);
+            transition: background-color 0.2s;
+        }
+
+        .navbar-brand:hover {
+            background-color: #ffffff;
+            color: #4b6cb7;
+            text-decoration: none;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(0, 0, 0, .1); 
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
 
         .container-fluid {
@@ -295,6 +315,9 @@
                         <a class="nav-link" href="index.html">Тренировки</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="user2.html">User2</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="author.html">Авторы</a>
                     </li>
                     <li class="nav-item">
@@ -324,6 +347,9 @@
         <!-- <header class="section">
             <h1 style="display: flex; justify-content: center;">Тренировки</h1>
         </header> -->
+        <h1 style="display: flex; justify-content: center;"></h1>
+        <div style="padding-top: 50px;">
+
         <h1 style="display: flex; justify-content: center;">Тренировки</h1>
 
         <div style="padding-top: 50px;">

@@ -26,8 +26,8 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            /* Используйте min-height вместо height */
             overflow: auto;
+            /* padding-top: 100px; */
         }
 
         .center {
@@ -86,7 +86,6 @@
             max-width: 800px;
             margin: 20px;
             word-wrap: break-word;
-            color: black;
         }
 
         select,
@@ -209,14 +208,15 @@
 
 
         .navbar {
-        background-color: #f8f9fa; /* Светлый фон вместо градиента */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1030;
-        padding: 10px 0;
-    }
+            background-color: #f8f9fa;
+            /* Светлый фон вместо градиента */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            padding: 10px 0;
+        }
 
         .navbar-nav {
             display: flex;
@@ -278,7 +278,7 @@
         }
 
         .navbar-toggler {
-            border-color: rgba(0, 0, 0, .1); 
+            border-color: rgba(0, 0, 0, .1);
         }
 
         .navbar-toggler-icon {
@@ -302,10 +302,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="glavnaya.html">Training</a>
-
-            йаКрутой228
-
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -350,42 +346,246 @@
 
     <div class="container">
         <!-- <header class="section">
-            <h1 style="display: flex; justify-content: center;">Главная</h1>
+            <h1 style="display: flex; justify-content: center;">Тренировки</h1>
         </header> -->
-        <h1 style="display: flex; justify-content: center;">Главная</h1>
-        <div style="padding-top: 56px;">
+        <h1 style="display: flex; justify-content: center;"></h1>
+        <div style="padding-top: 50px;">
 
-            <main class="section">
-                <h2 class="section-title">Добро пожаловать на мой сайт</h2>
-                <p class="section-content">
-                    Здесь вы найдете много интересной информации о моих тренировках.
-                    Пожалуйста, выберите раздел, который вас интересует.</p>
-            </main>
+            <h1 style="display: flex; justify-content: center;">Тренировки</h1>
+
+            <div style="padding-top: 50px;">
+                <h3 style="display: flex; justify-content: center;">Для user2 йоу</h3>
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="shit/6.gif" width="300px">
+            </div>
+
+            <div class="center">
+                <div class="box">
+                    <h1>Выберите день недели:</h1>
+                    <select id="weekday">
+                        <option value="0">1. Спина грудь бицепс</option>
+                        <option value="1">2. Плечи ноги трицепс</option>
+                    </select>
+
+                    <button onclick="showSchedule()">Показать упражнения</button>
+                    <button id="clearButton" onclick="clearFields()">Очистить</button>
+                    <div id="response" style="color: #000; margin-top: 10px;"></div>
+
+                </div>
+            </div>
+
+            <script>
+                function showSchedule() {
+                    var weekdaySelect = document.getElementById('weekday');
+                    var selectedItem = weekdaySelect.selectedIndex;
+                    var responseDiv = document.getElementById('response');
+
+                    var responseText = '';
+                    switch (selectedItem) {
+
+                        // +-----------------------------------------------------------------+
+                        // |                             1 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
+
+                        case 0:
+                            responseText = `<pre><b>ТРЕНИРОВКА СПИНА + ГРУДЬ + БИЦЕПС:</b>
+<b>
++-----------+
+|  1)СПИНА: |
++-----------+
+</b>
+    1)разминка
+        5 разминочных подтягиваний параллельным хватом
+        50 подтягиваний разными хватами
+
+    2) тяга верхнего блока:
+        4 подхода:
+            1) разминочный вес на 10 повторений (32 кг)
+            2) 53кг на 8-12 повторений
+            3) 59 кг на 8-12 повторений
+            4) 73 кг на 3-4 повторения
+
+    3) горизонтальная тяга:
+        подходы:
+            1) разминочный вес на 10 повторений (18кг)
+            2) 27кг на 8-12 повторений
+            3) 27кг на 8-12 повторений
+            (надо сделать с ручной на толщину спины)
+
+    4) экстензия на поясницу
+        подходы:
+            4х10-15
+
+    5)вертикально-горизонтальная тяга:
+        подходы:
+            1)45кг 15 повт.
+            2)54кг 12 повт.
+            3)68кг 8-12 повт
+            4)68кг 8-12 повт
+
+<b>
++-----------+
+|  2)ГРУДЬ: |
++-----------+
+</b>
+    1) жим лежа
+        1) пустой гриф 15-20 повт (разминочный)
+        2) 30 кг 8-12 повт.
+        3) 45 6-8 повт.
+        4) 30 кг 8-12 повт.
+
+    2) жим в тренажере chest press
+        1) легкий вес 10-15 повт.
+        2) 30 кг 8-10 повт.
+        3) 45 кг 8-12 повт.
+        4) 60 кг 8 повт.
+        5) 50кг макс --> 40кг макс --> 30кг макс --> 20кг макс --> 10 кг макс
+
+    3) разводки в блоках
+        1) легкий 15-20 повт (разминочный)
+        2) 18 кг 8-12 повт.
+        3) 23 кг 4 повт.
+        4) 23 кг 15 повт.
+    
+    4) жим гантелей мб :///
+<b>
++------------+
+|  3)БИЦЕПС: |
++------------+
+</b>
+    1) тренажер на бицепс:
+        подходы:
+            1) 0кг 15-20 повт.
+            2) 10 кг 8-12 повт.
+            3) 10 кг 8-12 повт.
+            4) 10 кг 8-12 повт.
+
+    2) на тренажере сидя
+        50 раз, 5 на каждую, вторая отдыхает
+
+    3) гантель на бицепс:
+        1) легкий вес - 12 повт
+        2) хх вес - 20 повт
+        3) хх вес - макс
+        4) хх вес – макс
+</pre>`;
+                            break;
+
+                        // +-----------------------------------------------------------------+
+                        // |                             2 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
+
+                        case 1:
+                            responseText = `<pre><b>ТРЕНИРОВКА ПЛЕЧИ + НОГИ + ТРИЦЕПС</b>
+                                <b>
++----------+
+|  1)НОГИ: |
++----------+
+</b>
+    1)жим ногами:
+        1) разминочный 30кг на 15-20 повт.
+        2) 50кг на 8-12
+        3) 70кг на 8-12
+        4) 90кг на 8-12
+
+    2)гакк машина
+        1) 30 кг разминочные 20 повт.
+        2) 50 кг на 8-12 повт
+        3) 70 кг на 8-12 повт
+        4) 90 кг на 8-12 повт
+
+    3)Разгибание ног сидя
+        1) 15 кг разминочные 20 повт.
+        2) 30 кг на 8-12 повт
+        3) 40 кг на 8-12 повт
+        4) 55 кг на 6 повт
+
+    4)Сгибание ног лежа
+        1) хх кг разминочные 20 повт.
+        2) хх кг на 8-12 повт
+        3) хх кг на 8-12 повт
+        4) хх кг на 8-12 повт
+
+    5)Сгибание ног сидя
+        1) 20 кг на 20 повт.
+        2) 35 кг на 8-12 повт
+        3) 45 кг на 8-12 повт
+        4) 60 кг на 6 повт
+
+<b>
++-----------+
+|  2)ПЛЕЧИ: |
++-----------+
+</b>
+    1) жим вверх на средний пучок:
+        1) разминочный 10кг на 10-12 повт.
+        2) 15 кг на 8-12
+        3) 20 кг на 8-12
+        4) 20 кг делаем максимум --> снимаем по блину, максимум повторений -> снимаем по блину и так пока блинов не останется, тогда максимум
+
+    2) махи в стороны
+        1) 8 кг 8-12
+        2) 10 кг 8-12
+        3) 12 кг 8-12
+        4) 14 кг 6-8
+
+    3) протяжки:
+        1) 20 кг 8-12
+        2) 30 кг 8-12
+        3) 30 кг 8-12
+        4) 35 кг 6-8
+
+    4) средний пучок в кроссовере
+        1) 9 кг 8-12
+        2) 9 кг 8-12
+        3) 14 кг 8-12
+        4) 14 кг 6-8
+
+<b>
++-------------+
+|  3)ТРИЦЕПС: |
++-------------+
+</b>
+    1) жим лежа узким хватом:
+        1)(пустой гриф) 10-15 повт.
+        2) 30 кг 10-12 повт.
+        3) два подхода 45 кг на макс
+        4) 30 кг на макс
+        
+    2) брусья:
+        1) 10 повт.
+        2) максимум
+        3) максимум
+        4) максимум
+
+    3)канат:
+        1) 18кг - 12 повт
+        2) 23кг - 12 повт
+        3) 32кг - 8-12 повт
+        4) 36кг – 8-12 повт.
+</pre>`;
+                            break;
+                        default:
+                            responseText = `<pre>Пожалуйста, выберите день недели</pre>`;
+                            break;
+                    }
+                    responseDiv.innerHTML = responseText;
+                    responseDiv.style.color = '#000';
+                }
+
+                function clearFields() {
+                    document.getElementById('response').innerHTML = '';
+                }
+            </script>
         </div>
-    </div>
 
-    <div class="center">
-        <div class="box">
-
-
-            <b style="color: black">Сюда можно ченибудь написать, пока не знаю что</b> <br>
-
-            <img src="shit/ичиго2.gif" width="300px">
-            <img src="shit/1.jpg" width="215px">
-
-            <p class="section-content">
-            </p>
-
-
-        </div>
-    </div>
-
-    <!-- ----------------------- -->
-    <footer class="section">
-        <p>Все права защищены. Titarenko incorporation &copy; 2024</p>
-    </footer>
-    <!-- ----------------------- -->
-
+        <!-- ----------------------- -->
+        <footer class="section">
+            <p>Все права защищены. Titarenko incorporation &copy; 2024</p>
+        </footer>
+        <!-- ----------------------- -->
 </body>
 
 </html>
