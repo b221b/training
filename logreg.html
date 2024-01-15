@@ -210,17 +210,19 @@
 
 
         .navbar {
-        background-color: #f8f9fa; /* Светлый фон вместо градиента */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1030;
-        padding: 10px 0;
-    }
+            background-color: #f8f9fa;
+            /* Светлый фон вместо градиента */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            padding: 10px 0;
+        }
 
         .navbar-nav {
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
             list-style: none;
             padding-left: 0;
@@ -279,7 +281,7 @@
         }
 
         .navbar-toggler {
-            border-color: rgba(0, 0, 0, .1); 
+            border-color: rgba(0, 0, 0, .1);
         }
 
         .navbar-toggler-icon {
@@ -292,6 +294,42 @@
             align-items: center;
             /* Уменьшаем padding справа и слева, чтобы соответствовать новому размеру навигации */
             padding: 0 10px;
+        }
+
+        /* Стиль для навигационных пунктов в вертикальном режиме */
+        .nav-item-vertical {
+            width: 100%;
+        }
+
+        /* Стиль для навигационной панели в вертикальном режиме при развертывании */
+        .navbar-collapse-vertical {
+            flex-basis: auto;
+        }
+
+        /* Медиа-запрос, который будет применять стили для экранов меньше определенной ширины */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                flex-direction: column;
+                /* Пункты меню будут идти вертикально */
+            }
+
+            .nav-item {
+                width: 100%;
+                /* Каждый пункт меню займет все доступное горизонтальное пространство */
+            }
+        }
+
+        /* Стили для отображения вертикального меню после переключения navbar-toggler */
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-left: 1rem;
+            /* Слегка увеличиваем отступ слева для ссылок */
+            padding-right: 1rem;
+            /* Слегка увеличиваем отступ справа для ссылок */
+        }
+
+        /* Добавить отступ сверху для navbar-collapse чтобы она не перекрывала элементы сверху */
+        .navbar-collapse {
+            padding-top: 1rem;
         }
 
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
