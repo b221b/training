@@ -15,318 +15,322 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSd1n34mIKl6qvL0iBxGIw5g5KRvMz3M7RF4jyJHrBg6KXN6"
         crossorigin="anonymous"></script>
 
-        <style>
-            body {
-                background-color: #000;
-                color: #fff;
-                font-family: Arial, sans-serif;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                /* Используйте min-height вместо height */
-                overflow: auto;
-            }
-    
-            .center {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-            }
-    
-            h1,
-            h2,
-            h3 {
-                color: #8800ff;
-            }
-    
-            a {
-                color: #8800ff;
-                text-decoration: none;
-            }
-    
-            a:hover {
-                color: #bb00ff;
-            }
-    
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Используйте min-height вместо height */
+            overflow: auto;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #8800ff;
+        }
+
+        a {
+            color: #8800ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #bb00ff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            /* <= Новое свойство для ширины */
+            /* Остальные свойства... */
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .box {
+
+            border: 1px solid #512da8;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+            word-wrap: break-word;
+            color: black;
+        }
+
+        select,
+        button,
+        div {
+            margin: 10px;
+        }
+
+        select,
+        button {
+            background-color: #7e57c2;
+            /* Medium-Fair purple select and button background */
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        select:hover,
+        button:hover {
+            background-color: #512da8;
+            /* Darker purple select and button on hover */
+            color: white;
+        }
+
+        #clearButton {
+            margin-left: 10px;
+        }
+
+        /*задний фон*/
+
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+
+        @media (max-width: 768px) {
             .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                width: 100%;
-                /* <= Новое свойство для ширины */
-                /* Остальные свойства... */
+                padding: 10px;
             }
-    
-            .section {
-                margin-bottom: 40px;
-            }
-    
-            .section-title {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-    
-            .section-content {
-                font-size: 16px;
-                line-height: 1.5;
-            }
-    
+
             .box {
-    
-                border: 1px solid #512da8;
-                border-radius: 15px;
-                padding: 30px;
-                background-color: #ffffff;
-                width: 100%;
-                max-width: 800px;
-                margin: 20px;
-                word-wrap: break-word;
-                color: black;
-            }
-    
-            select,
-            button,
-            div {
+                width: 90%;
+                /* Больше места на экране меньшего размера */
+                padding: 15px;
+                margin-top: 10px;
                 margin: 10px;
             }
-    
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .section-content {
+                font-size: 14px;
+            }
+
             select,
             button {
-                background-color: #7e57c2;
-                /* Medium-Fair purple select and button background */
-                color: white;
-                border: none;
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            /* Меньшее пространство вокруг кнопок для экономии места */
+            .top-right-button,
+            .top-left-button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 24px;
+                /* Уменьшение размера заголовка для помещения содержимого на экране меньшего размера */
+            }
+
+            .center {
+                padding: 0;
+            }
+
+            /* Уменьшить отступы и размер шрифта еще больше для мобильных устройств */
+            .box {
+                border-radius: 10px;
                 padding: 10px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                transition-duration: 0.4s;
-                cursor: pointer;
+                margin: 5px;
             }
-    
-            select:hover,
-            button:hover {
-                background-color: #512da8;
-                /* Darker purple select and button on hover */
-                color: white;
+
+            select,
+            button {
+                font-size: 12px;
+                /* Меньший текст для селекта и кнопок */
+                padding: 15px;
             }
-    
-            #clearButton {
-                margin-left: 10px;
-            }
-    
-            /*задний фон*/
-    
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-    
-            @media (max-width: 768px) {
-                .container {
-                    padding: 10px;
-                }
-    
-                .box {
-                    width: 90%;
-                    /* Больше места на экране меньшего размера */
-                    padding: 15px;
-                    margin-top: 10px;
-                    margin: 10px;
-                }
-    
-                .section-title {
-                    font-size: 20px;
-                }
-    
-                .section-content {
-                    font-size: 14px;
-                }
-    
-                select,
-                button {
-                    font-size: 14px;
-                    padding: 8px;
-                }
-    
-                /* Меньшее пространство вокруг кнопок для экономии места */
-                .top-right-button,
-                .top-left-button {
-                    padding: 8px;
-                    font-size: 14px;
-                }
-            }
-    
-            @media (max-width: 480px) {
-                body {
-                    padding: 5px;
-                }
-    
-                h1 {
-                    font-size: 24px;
-                    /* Уменьшение размера заголовка для помещения содержимого на экране меньшего размера */
-                }
-    
-                .center {
-                    padding: 0;
-                }
-    
-                /* Уменьшить отступы и размер шрифта еще больше для мобильных устройств */
-                .box {
-                    border-radius: 10px;
-                    padding: 10px;
-                    margin: 5px;
-                }
-    
-                select,
-                button {
-                    font-size: 12px;
-                    /* Меньший текст для селекта и кнопок */
-                    padding: 15px;
-                }
-            }
-    
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-    
-            pre {
-                font-family: 'Courier New', Courier, monospace;
-                /* font-size: 18px; */
-                white-space: pre-wrap;
-                padding: 10px;
-                background-color: #f5f5f5;
-            }
-    
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-            /* -------------------------------------------------------------------------- */
-    
-    
-            .navbar {
-                background-color: #f8f9fa;
-                /* Светлый фон вместо градиента */
-                box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-                position: fixed;
-                top: 0;
-                width: 100%;
-                z-index: 1030;
-                padding: 10px 0;
-            }
-    
-            .navbar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                list-style: none;
-                padding-left: 0;
-                margin-bottom: 0;
-                align-items: center;
-                width: 100%;
-                justify-content: space-between;
-            }
-    
-            .nav-item {
-                flex-grow: 1;
-                text-align: center;
-                transition: transform 0.2s;
-            }
-    
-            .nav-item:hover {
-                transform: scale(1.05);
-            }
-    
-            .nav-link {
-                color: #333;
-                text-decoration: none;
-                padding: 8px 20px;
-                display: block;
-                transition: color 0.2s ease-out;
-            }
-    
-            .nav-link:hover {
-                text-decoration: underline;
-            }
-    
-            .nav-link:hover,
-            .nav-link:focus {
-                color: #0056b3;
-                text-decoration: none;
-            }
-    
-            .navbar-brand {
-                color: #0056b3;
-                text-decoration: none;
-                font-size: 1.5em;
-                font-weight: bold;
-                background-color: #555;
-                padding: 5px 10px;
-                display: flex;
-                align-items: center;
-                border-radius: 5px;
-                background-image: linear-gradient(to right, #f857a6, #ff5858);
-                transition: background-color 0.2s;
-            }
-    
-            .navbar-brand:hover {
-                background-color: #ffffff;
-                color: #4b6cb7;
-                text-decoration: none;
-            }
-    
-            .navbar-toggler {
-                border-color: rgba(0, 0, 0, .1);
-            }
-    
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-            }
-    
-            .container-fluid {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                /* Уменьшаем padding справа и слева, чтобы соответствовать новому размеру навигации */
-                padding: 0 10px;
-            }
-    
-            /* Стиль для навигационных пунктов в вертикальном режиме */
-    .nav-item-vertical {
-        width: 100%;
-    }
-    
-    /* Стиль для навигационной панели в вертикальном режиме при развертывании */
-    .navbar-collapse-vertical {
-        flex-basis: auto;
-    }
-    
-    /* Медиа-запрос, который будет применять стили для экранов меньше определенной ширины */
-    @media (max-width: 992px) {
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            /* font-size: 18px; */
+            white-space: pre-wrap;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------- */
+
+
+        .navbar {
+            background-color: #f8f9fa;
+            /* Светлый фон вместо градиента */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            padding: 10px 0;
+        }
+
         .navbar-nav {
-            flex-direction: column; /* Пункты меню будут идти вертикально */
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
         }
+
         .nav-item {
-            width: 100%; /* Каждый пункт меню займет все доступное горизонтальное пространство */
+            flex-grow: 1;
+            text-align: center;
+            transition: transform 0.2s;
         }
-    }
-    
-    /* Стили для отображения вертикального меню после переключения navbar-toggler */
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-left: 1rem; /* Слегка увеличиваем отступ слева для ссылок */
-        padding-right: 1rem; /* Слегка увеличиваем отступ справа для ссылок */
-    }
-    
-    /* Добавить отступ сверху для navbar-collapse чтобы она не перекрывала элементы сверху */
-    .navbar-collapse{
-        padding-top: 1rem;
-    }
-    
-        </style>
+
+        .nav-item:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 20px;
+            display: block;
+            transition: color 0.2s ease-out;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .navbar-brand {
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            background-color: #555;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            background-image: linear-gradient(to right, #f857a6, #ff5858);
+            transition: background-color 0.2s;
+        }
+
+        .navbar-brand:hover {
+            background-color: #ffffff;
+            color: #4b6cb7;
+            text-decoration: none;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(0, 0, 0, .1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Уменьшаем padding справа и слева, чтобы соответствовать новому размеру навигации */
+            padding: 0 10px;
+        }
+
+        /* Стиль для навигационных пунктов в вертикальном режиме */
+        .nav-item-vertical {
+            width: 100%;
+        }
+
+        /* Стиль для навигационной панели в вертикальном режиме при развертывании */
+        .navbar-collapse-vertical {
+            flex-basis: auto;
+        }
+
+        /* Медиа-запрос, который будет применять стили для экранов меньше определенной ширины */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                flex-direction: column;
+                /* Пункты меню будут идти вертикально */
+            }
+
+            .nav-item {
+                width: 100%;
+                /* Каждый пункт меню займет все доступное горизонтальное пространство */
+            }
+        }
+
+        /* Стили для отображения вертикального меню после переключения navbar-toggler */
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-left: 1rem;
+            /* Слегка увеличиваем отступ слева для ссылок */
+            padding-right: 1rem;
+            /* Слегка увеличиваем отступ справа для ссылок */
+        }
+
+        /* Добавить отступ сверху для navbar-collapse чтобы она не перекрывала элементы сверху */
+        .navbar-collapse {
+            padding-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -351,6 +355,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user2.html">User2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bbal.html">Баскетбол Куроко</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="author.html">Авторы</a>
@@ -385,50 +392,50 @@
         <h1 style="display: flex; justify-content: center;"></h1>
         <div style="padding-top: 50px;">
 
-        <h1 style="display: flex; justify-content: center;">Тренировки</h1>
+            <h1 style="display: flex; justify-content: center; color: #000;">Тренировки</h1>
 
-        <div style="padding-top: 50px;">
-            <h3 style="display: flex; justify-content: center;">тут могла быть ваша реклама</h3>
-        </div>
-
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="shit/6.gif" width="300px">
-        </div>
-
-        <div class="center">
-            <div class="box">
-                <h1>Выберите день недели:</h1>
-                <select id="weekday">
-                    <option value="0">1. Спина грудь</option>
-                    <option value="1">2. Бицепс трицепс</option>
-                    <option value="2">3. Ноги плечи</option>
-                    <option value="3">4. Спина грудь плечи</option>
-                    <option value="4">5. Грудь ноги трицепс бицепс</option>
-                    <option value="5">6. Калистеника</option>
-                </select>
-
-                <button onclick="showSchedule()">Показать упражнения</button>
-                <button id="clearButton" onclick="clearFields()">Очистить</button>
-                <div id="response" style="color: #000; margin-top: 10px;"></div>
-
+            <div style="padding-top: 50px;">
+                <h3 style="display: flex; justify-content: center;">тут могла быть ваша реклама</h3>
             </div>
-        </div>
 
-        <script>
-            function showSchedule() {
-                var weekdaySelect = document.getElementById('weekday');
-                var selectedItem = weekdaySelect.selectedIndex;
-                var responseDiv = document.getElementById('response');
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="shit/6.gif" width="300px">
+            </div>
 
-                var responseText = '';
-                switch (selectedItem) {
+            <div class="center">
+                <div class="box">
+                    <h1>Выберите день недели:</h1>
+                    <select id="weekday">
+                        <option value="0">1. Спина грудь</option>
+                        <option value="1">2. Бицепс трицепс</option>
+                        <option value="2">3. Ноги плечи</option>
+                        <option value="3">4. Спина грудь плечи</option>
+                        <option value="4">5. Грудь ноги трицепс бицепс</option>
+                        <option value="5">6. Калистеника</option>
+                    </select>
 
-                    // +-----------------------------------------------------------------+
-                    // |                             1 ДЕНЬ                              |
-                    // +-----------------------------------------------------------------+
+                    <button onclick="showSchedule()">Показать упражнения</button>
+                    <button id="clearButton" onclick="clearFields()">Очистить</button>
+                    <div id="response" style="color: #000; margin-top: 10px;"></div>
 
-                    case 0:
-                        responseText = `<pre><b>ТРЕНИРОВКА СПИНА + ГРУДЬ:</b>
+                </div>
+            </div>
+
+            <script>
+                function showSchedule() {
+                    var weekdaySelect = document.getElementById('weekday');
+                    var selectedItem = weekdaySelect.selectedIndex;
+                    var responseDiv = document.getElementById('response');
+
+                    var responseText = '';
+                    switch (selectedItem) {
+
+                        // +-----------------------------------------------------------------+
+                        // |                             1 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
+
+                        case 0:
+                            responseText = `<pre><b>ТРЕНИРОВКА СПИНА + ГРУДЬ:</b>
 <b>
 +-----------+
 |  1)СПИНА: |
@@ -489,14 +496,14 @@
     
     4) жим гантелей мб :///
 </pre>`;
-                        break;
+                            break;
 
-                    // +-----------------------------------------------------------------+
-                    // |                             2 ДЕНЬ                              |
-                    // +-----------------------------------------------------------------+
+                        // +-----------------------------------------------------------------+
+                        // |                             2 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
 
-                    case 1:
-                        responseText = `<pre><b>ТРЕНИРОВКА РУК:</b>
+                        case 1:
+                            responseText = `<pre><b>ТРЕНИРОВКА РУК:</b>
 <b>
 +-------------+
 |  1)ТРИЦЕПС: |
@@ -556,14 +563,14 @@
         3) хх вес - макс
         4) хх вес – макс
 </pre>`;
-                        break;
+                            break;
 
-                    // +-----------------------------------------------------------------+
-                    // |                             3 ДЕНЬ                              |
-                    // +-----------------------------------------------------------------+
+                        // +-----------------------------------------------------------------+
+                        // |                             3 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
 
-                    case 2:
-                        responseText = `<pre><b>ТРЕНИРОВКА НОГИ + ПЛЕЧИ:</b>
+                        case 2:
+                            responseText = `<pre><b>ТРЕНИРОВКА НОГИ + ПЛЕЧИ:</b>
 
 <b>
 +----------+
@@ -636,14 +643,14 @@
         3) 10 кг 8-12 повт.
         4) 10 кг 8-12 повт.
 </pre>`;
-                        break;
+                            break;
 
-                    // +-----------------------------------------------------------------+
-                    // |                             4 ДЕНЬ                              |
-                    // +-----------------------------------------------------------------+
+                        // +-----------------------------------------------------------------+
+                        // |                             4 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
 
-                    case 3:
-                        responseText = `<pre><b>ТРЕНИРОВКА СПИНА ГРУДЬ ПЛЕЧИ</b>
+                        case 3:
+                            responseText = `<pre><b>ТРЕНИРОВКА СПИНА ГРУДЬ ПЛЕЧИ</b>
 
 <b>
 +-----------+
@@ -695,14 +702,14 @@
         3) 30 кг 8-12
         4) 35 кг 6-8
 </pre>`;
-                        break;
+                            break;
 
-                    // +-----------------------------------------------------------------+
-                    // |                             5 ДЕНЬ                              |
-                    // +-----------------------------------------------------------------+
+                        // +-----------------------------------------------------------------+
+                        // |                             5 ДЕНЬ                              |
+                        // +-----------------------------------------------------------------+
 
-                    case 4:
-                        responseText = `<pre><b>ТРЕНИРОВКА ГРУДЬ НОГИ ТРИЦЕПС БИЦЕПС</b>
+                        case 4:
+                            responseText = `<pre><b>ТРЕНИРОВКА ГРУДЬ НОГИ ТРИЦЕПС БИЦЕПС</b>
 
 <b>
 +-----------+
@@ -765,14 +772,14 @@
         3) 20 кг 8-12
         4) 25 кг 8-12
 </pre>`;
-                        break;
+                            break;
 
-                    // +-----------------------------------------------------------------+
-                    // |                        ДЕНЬ КАЛИСТЕНИКИ                         |
-                    // +-----------------------------------------------------------------+
+                        // +-----------------------------------------------------------------+
+                        // |                        ДЕНЬ КАЛИСТЕНИКИ                         |
+                        // +-----------------------------------------------------------------+
 
-                    case 5:
-                        responseText = `<pre><b>День Калистеники</b>
+                        case 5:
+                            responseText = `<pre><b>День Калистеники</b>
 
 база:
     1) подтягивания:
@@ -824,26 +831,26 @@
 2) <b>подьемы в передний вис с резинкой</b> --> без резинки
 3) <b>подтягивания</b> --> высокие подтягивания в уголке
 </pre>`;
-                        break;
-                    default:
-                        responseText = `<pre>Пожалуйста, выберите день недели</pre>`;
-                        break;
+                            break;
+                        default:
+                            responseText = `<pre>Пожалуйста, выберите день недели</pre>`;
+                            break;
+                    }
+                    responseDiv.innerHTML = responseText;
+                    responseDiv.style.color = '#000';
                 }
-                responseDiv.innerHTML = responseText;
-                responseDiv.style.color = '#000';
-            }
 
-            function clearFields() {
-                document.getElementById('response').innerHTML = '';
-            }
-        </script>
-    </div>
+                function clearFields() {
+                    document.getElementById('response').innerHTML = '';
+                }
+            </script>
+        </div>
 
-    <!-- ----------------------- -->
-    <footer class="section">
-        <p>Все права защищены. Titarenko incorporation &copy; 2024</p>
-    </footer>
-    <!-- ----------------------- -->
+        <!-- ----------------------- -->
+        <footer class="section">
+            <p>Все права защищены. Titarenko incorporation &copy; 2024</p>
+        </footer>
+        <!-- ----------------------- -->
 </body>
 
 </html>
